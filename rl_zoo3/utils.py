@@ -15,6 +15,7 @@ from huggingface_hub import HfApi
 from huggingface_sb3 import EnvironmentName, ModelName
 from sb3_contrib import ARS, QRDQN, TQC, TRPO, CrossQ, RecurrentPPO
 from stable_baselines3 import A2C, DDPG, DQN, PPO, SAC, TD3
+from reinforce_algorithms import REINFORCE, MiniBatchREINFORCE
 from stable_baselines3.common.base_class import BaseAlgorithm
 from stable_baselines3.common.callbacks import BaseCallback
 from stable_baselines3.common.env_util import make_vec_env
@@ -26,6 +27,8 @@ from torch import nn as nn
 
 ALGOS: dict[str, type[BaseAlgorithm]] = {
     "a2c": A2C,
+    "reinforce": REINFORCE,
+    "minibatch_reinforce": MiniBatchREINFORCE,
     "ddpg": DDPG,
     "dqn": DQN,
     "ppo": PPO,
